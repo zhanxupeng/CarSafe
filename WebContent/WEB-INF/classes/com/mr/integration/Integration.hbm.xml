@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-6 22:06:07 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.integration.Integration" table="INTEGRATION">
+        <id name="car_id" type="int">
+            <column name="CAR_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="coin" type="int">
+            <column name="COIN" />
+        </property>
+        <property name="member" type="int">
+            <column name="MEMBER" />
+        </property>
+        <property name="mydate" type="int">
+            <column name="MYDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

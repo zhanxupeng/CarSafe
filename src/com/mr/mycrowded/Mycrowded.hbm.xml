@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-4 13:06:27 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.mycrowded.Mycrowded" table="MYCROWDED">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="myflag" type="int">
+            <column name="MYFLAG" />
+        </property>
+        <property name="nextflag" type="int">
+            <column name="NEXTFLAG" />
+        </property>
+        <property name="speed" type="double">
+            <column name="SPEED" />
+        </property>
+    </class>
+</hibernate-mapping>

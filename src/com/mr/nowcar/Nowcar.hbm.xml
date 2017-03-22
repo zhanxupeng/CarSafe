@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ <hibernate-mapping>
+ 	<class name="com.mr.nowcar.Nowcar" table="nowcar">
+ 		<!-- id值 -->
+ 		<id name="car_id" column="car_id" type="int">
+			<generator class="assigned"/>
+		</id>
+		<property name="xx" type="double">
+			<column name="xx"></column>
+		</property>
+		<property name="yy" type="double">
+			<column name="yy"></column>
+		</property>
+		<property name="speed" type="double">
+			<column name="speed"></column>
+		</property>
+		<property name="flag" type="int">
+			<column name="flag"></column>
+		</property>
+		<property name="direction" type="double">
+			<column name="direction"></column>
+		</property>
+ 	</class>
+ </hibernate-mapping>

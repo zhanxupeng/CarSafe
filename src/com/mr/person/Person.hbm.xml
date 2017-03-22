@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ <hibernate-mapping>
+ 	<class name="com.mr.person.Person" table="person">
+ 		<!-- id值 -->
+ 		<id name="car_id" column="car_id" type="int">
+			<generator class="assigned"/>
+		</id>
+		<property name="usename" type="string" length="45">
+			<column name="usename"></column>
+		</property>
+		<property name="password" type="string" length="45">
+			<column name="password"></column>
+		</property>
+ 	</class>
+ </hibernate-mapping>
