@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.viewpreference.ViewPreference" table="VIEWPREFERENCE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="enjoy" type="int">
+            <column name="ENJOY" />
+        </property>
+        <property name="quiet" type="int">
+            <column name="QUIET" />
+        </property>
+        <property name="natural" type="int">
+            <column name="NATURAL" />
+        </property>
+        <property name="history" type="int">
+            <column name="HISTORY" />
+        </property>
+        <property name="lively" type="int">
+            <column name="LIVELY" />
+        </property>
+        <property name="stimulate" type="int">
+            <column name="STIMULATE" />
+        </property>
+        <property name="hidden" type="int">
+            <column name="HIDDEN" />
+        </property>
+    </class>
+</hibernate-mapping>

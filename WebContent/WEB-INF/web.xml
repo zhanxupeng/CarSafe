@@ -169,4 +169,34 @@
     <servlet-name>CardataServlet</servlet-name>
     <url-pattern>/CardataServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ByRouteServlet</display-name>
+    <servlet-name>ByRouteServlet</servlet-name>
+    <servlet-class>com.mr.servlet.ByRouteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ByRouteServlet</servlet-name>
+    <url-pattern>/ByRouteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ByRouteSevlet</display-name>
+    <servlet-name>ByRouteSevlet</servlet-name>
+    <servlet-class>com.mr.servlet.ByRouteSevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ByRouteSevlet</servlet-name>
+    <url-pattern>/ByRouteSevlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SingleRouteServlet</display-name>
+    <servlet-name>SingleRouteServlet</servlet-name>
+    <servlet-class>com.mr.servlet.SingleRouteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleRouteServlet</servlet-name>
+    <url-pattern>/SingleRouteServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

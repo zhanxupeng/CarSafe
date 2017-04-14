@@ -30,8 +30,8 @@ public class InsertBlogServlet extends HttpServlet {
 		int car_id;
 		String username,mysign;
 		car_id=Integer.parseInt(request.getParameter("car_id"));
-		username=URLDecoder.decode(request.getParameter("username"),"UTF-8");
-		mysign=URLDecoder.decode(request.getParameter("mysign"),"UTF-8");
+		username=new String(request.getParameter("username").getBytes("ISO-8859-1"),"UTF-8");
+		mysign=new String(request.getParameter("mysign").getBytes("ISO-8859-1"),"UTF-8");
 		System.out.println(username);
 		//��������
 		OperateBlog blogs=new OperateBlog();

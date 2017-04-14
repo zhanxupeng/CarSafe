@@ -26,5 +26,9 @@
 		<mapping resource="com/mr/blog/Blog.hbm.xml"/>
 		<mapping resource="com/mr/forecast/Forecast.hbm.xml"/>
 		<mapping resource="com/mr/cardata/Cardata.hbm.xml"/>
+		<mapping resource="com/mr/attractions/Attractions.hbm.xml"/>
+		<mapping resource="com/mr/crowds/Crowds.hbm.xml"/>
+		<mapping resource="com/mr/viewpreference/ViewPreference.hbm.xml"/>
+		<mapping resource="com/mr/weatherindex/WeatherIndex.hbm.xml"/>
  	</session-factory>
  </hibernate-configuration>

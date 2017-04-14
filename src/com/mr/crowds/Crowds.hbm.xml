@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.crowds.Crowds" table="CROWDS">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="teens" type="int">
+            <column name="TEENS" />
+        </property>
+        <property name="student" type="int">
+            <column name="STUDENT" />
+        </property>
+        <property name="white" type="int">
+            <column name="WHITE" />
+        </property>
+        <property name="blue" type="int">
+            <column name="BLUE" />
+        </property>
+        <property name="familys" type="int">
+            <column name="FAMILYS" />
+        </property>
+        <property name="oldman" type="int">
+            <column name="OLDMAN" />
+        </property>
+        <property name="friend" type="int">
+            <column name="FRIEND" />
+        </property>
+        <property name="couple" type="int">
+            <column name="COUPLE" />
+        </property>
+    </class>
+</hibernate-mapping>

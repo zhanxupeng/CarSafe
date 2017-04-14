@@ -9,8 +9,8 @@
 <body>
 <table>
 	<tr>
-		<th width="100px">车次号</th>
-		<th width="100px">x坐标</th>
+		<th width="200px">车次号</th>
+		<th width="200px">x坐标</th>
 		<th width="100px">y坐标</th>
 		<th width="100px">速度</th>
 		<th width="100px">路线</th>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.attractions.Attractions" table="ATTRACTIONS">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="detail" type="java.lang.String">
+            <column name="DETAIL" />
+        </property>
+        <property name="local" type="java.lang.String">
+            <column name="LOCAL" />
+        </property>
+        <property name="exterior" type="java.lang.String">
+            <column name="EXTERIOR" />
+        </property>
+        <property name="routepicture" type="java.lang.String">
+            <column name="ROUTEPICTURE" />
+        </property>
+        <property name="time" type="double">
+            <column name="TIME" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <many-to-one name="crowds" class="com.mr.crowds.Crowds" fetch="join">
+            <column name="crowdsid" />
+        </many-to-one>
+        <many-to-one name="viewPreference" class="com.mr.viewpreference.ViewPreference" fetch="join">
+            <column name="viewid" />
+        </many-to-one>
+        <many-to-one name="weatherIndex" class="com.mr.weatherindex.WeatherIndex" fetch="join">
+            <column name="weatherid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
