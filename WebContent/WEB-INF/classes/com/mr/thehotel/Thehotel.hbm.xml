@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-19 19:27:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.thehotel.Thehotel" table="thehotel">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="detail" type="java.lang.String">
+            <column name="detail" />
+        </property>
+        <property name="local" type="java.lang.String">
+            <column name="local" />
+        </property>
+        <property name="types" type="java.lang.String">
+            <column name="types" />
+        </property>
+        <property name="price" type="java.lang.String">
+            <column name="price" />
+        </property>
+        <property name="pricedetail" type="java.lang.String">
+            <column name="pricedetail" />
+        </property>
+        <property name="picture" type="java.lang.String">
+            <column name="picture" />
+        </property>
+        <property name="picturexi" type="java.lang.String">
+            <column name="picturexi" />
+        </property>
+    </class>
+</hibernate-mapping>

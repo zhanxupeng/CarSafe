@@ -6,7 +6,7 @@
  		<!-- 数据库驱动 -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<!-- 数据库连接的URL -->
-		<property name="connection.url">jdbc:mysql://localhost:3306/mysafecar</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/anxin</property>
 		<!-- 数据库连接用户名 -->
 		<property name="connection.username">root</property>
 		<!-- 数据库连接密码 -->
@@ -30,5 +30,7 @@
 		<mapping resource="com/mr/crowds/Crowds.hbm.xml"/>
 		<mapping resource="com/mr/viewpreference/ViewPreference.hbm.xml"/>
 		<mapping resource="com/mr/weatherindex/WeatherIndex.hbm.xml"/>
+		<mapping resource="com/mr/featuresfood/Featuresfood.hbm.xml"/>
+		<mapping resource="com/mr/thehotel/Thehotel.hbm.xml"/>
  	</session-factory>
  </hibernate-configuration>

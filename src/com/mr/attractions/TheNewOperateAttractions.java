@@ -7,18 +7,21 @@ import org.hibernate.Session;
 
 import com.mr.hibernate.HibernateUtil;
 
-public class OperateAttractions {
-	public static void main(String args[]){
+public class TheNewOperateAttractions {
+	public static void main(String[] args){
 //		Attractions attractions=SelectAttractionsById(8);
 //		if(attractions!=null){
 //			System.out.println(attractions.getName());
 //		}
-		List<RouteResult> list=OperateAttractions.selectByRoute("(0,0)","(500,500)","oldman","quiet",8);
+		List<RouteResult> list=TheNewOperateAttractions.selectByRoute("(0,0)","(500,500)","oldman","quiet",8);
 		if(list!=null){
 			System.out.println(list.size());
 			System.out.println(list.get(2).getMypicture());
 		}else {
 			System.out.println("当前没有记录");
+		}
+		for(RouteResult route:list){
+			System.out.println(route.getRoute());
 		}
 	}
 	public static Attractions SelectAttractionsById(int id){
@@ -52,7 +55,7 @@ public class OperateAttractions {
 		//对符合要求的结果按与起点的距离进行排序
 		forlist=sort(forlist);
 		//对排序的结果进行组合，并对组合的结果找出最短路径，返回结果
-		List<RouteResult> resultlist=zuhe(forlist, time);
+		List<RouteResult> resultlist=zuhe(forlist);
 		System.out.println("组合的总情况为："+resultlist.size());
 		return resultlist;
 		
@@ -60,7 +63,7 @@ public class OperateAttractions {
 	/*
 	 * 组合算法，中间包含最短路线推优
 	 */
-	private static List<RouteResult> zuhe(List<ForAttractions> items,double time){
+	private static List<RouteResult> zuhe(List<ForAttractions> items){
 		List<RouteResult> mylist=new ArrayList<>();
 		if(items.size()<=3){
 			System.out.println("当前size小于3");
@@ -88,9 +91,61 @@ public class OperateAttractions {
 		}
 		if(items.size()>3){
 			/*
+			 * 给出一个景点的路线
+			 */
+			for(int i=0;i<items.size();i++){
+				double mytime=items.get(i).getTime();
+				if(mytime>=7&&mytime<=9){
+					ForAttractions attr=items.get(i);
+					String s=String.format("%d",attr.getId());
+				RouteResult result=new RouteResult(attr.getExterior(),attr.getName(),
+								s, (attr.getForcrowds()+attr.getForviewpreference())/2,
+								attr.getTime(),attr.getPrice());
+				mylist.add(result);
+				}
+			}
+			/*
+			 * 给出两个景点的路线
+			 */
+			for(int i=0;i<items.size();i++){
+				int flag=1;
+				for(int j=i+1;j<items.size();j++){
+						double mytime=items.get(i).getTime()+items.get(j).getTime();
+						/*
+						 * 这里暂且先没有考虑路上花费的时间
+						 */
+						/*
+						 * 
+						 */
+						if(mytime>=7&&mytime<=9){
+							String route="";
+							String routeid="";
+							int zhishu=0;
+							double time1=0;
+							double price=0;
+							double theresult=selectDistance(items.get(i),items.get(j),items.get(j),items.get(j));
+							//System.out.println("theresult:"+theresult);
+							if(theresult<0.181){
+							route=items.get(i).getName()+"-->"+items.get(j).getName();
+							routeid=items.get(i).getId()+","+items.get(j).getId();
+							zhishu=items.get(i).getForcrowds()+items.get(i).getForviewpreference()+
+									items.get(j).getForcrowds()+items.get(j).getForviewpreference();
+							time1=items.get(i).getTime()+items.get(j).getTime();
+							price=items.get(i).getPrice()+items.get(j).getPrice();
+							String mypicture=items.get(i).getExterior();
+							RouteResult result=new RouteResult(mypicture,route, routeid, zhishu/4, time1,price);
+							mylist.add(result);
+							flag=0;
+						}
+					}
+					if(flag==0)
+						break;
+				}
+			}
+			/*
 			 * 给出三个景点的路线
 			 */
-			System.out.println("当前size大于3");
+			//System.out.println("当前size大于3");
 			for(int i=0;i<items.size();i++){
 				int flag=1;
 				for(int j=i+1;j<items.size();j++){
@@ -103,26 +158,44 @@ public class OperateAttractions {
 						/*
 						 * 
 						 */
-						if(mytime>time*0.5&&mytime<time*1.2){
+						if(mytime>=7&&mytime<=9){
 							String route="";
 							String routeid="";
 							int zhishu=0;
 							double time1=0;
 							double price=0;
 							double theresult=selectDistance(items.get(i),items.get(j),items.get(k),items.get(k));
-							System.out.println("theresult:"+theresult);
-							if(theresult<0.181||time>8){
-							route=items.get(i).getName()+"-->"+items.get(j).getName()
-									+"-->"+items.get(k).getName();
-							routeid=items.get(i).getId()+","+items.get(j).getId()
-									+","+items.get(k).getId();
-							zhishu=items.get(i).getForcrowds()+items.get(i).getForviewpreference()+
-									items.get(j).getForcrowds()+items.get(j).getForviewpreference()+
-									items.get(k).getForcrowds()+items.get(k).getForviewpreference();
-							time1=items.get(i).getTime()+items.get(j).getTime()+items.get(k).getTime();
-							price=items.get(i).getPrice()+items.get(j).getPrice()+
-									items.get(k).getPrice();
-							String mypicture=items.get(i).getExterior();
+							//System.out.println("theresult:"+theresult);
+							List<ForAttractions> thelist=new ArrayList<>();
+							thelist.add(items.get(i));
+							thelist.add(items.get(j));
+							thelist.add(items.get(k));
+							List<Integer> myids=Tanxin.selectId(thelist, 0);
+							//System.out.println(myids);
+							List<Integer> myidss=new ArrayList<>();
+							for(int p=0;p<items.size();p++){
+								for(Integer s:myids){
+									if(items.get(p).getId()==s){
+										myidss.add(p);
+									}
+								}
+							}
+							int ii=myidss.get(0);
+							int jj=myidss.get(1);
+							int kk=myidss.get(2);
+							//System.out.println("三个景点的情况："+myids);
+							if(theresult<0.181){
+							route=items.get(ii).getName()+"-->"+items.get(jj).getName()
+									+"-->"+items.get(kk).getName();
+							routeid=items.get(ii).getId()+","+items.get(jj).getId()
+									+","+items.get(kk).getId();
+							zhishu=items.get(ii).getForcrowds()+items.get(ii).getForviewpreference()+
+									items.get(jj).getForcrowds()+items.get(jj).getForviewpreference()+
+									items.get(kk).getForcrowds()+items.get(kk).getForviewpreference();
+							time1=items.get(ii).getTime()+items.get(jj).getTime()+items.get(kk).getTime();
+							price=items.get(ii).getPrice()+items.get(jj).getPrice()+
+									items.get(kk).getPrice();
+							String mypicture=items.get(ii).getExterior();
 							RouteResult result=new RouteResult(mypicture,route, routeid, zhishu/6, time1,price);
 							mylist.add(result);
 							flag=0;
@@ -151,7 +224,7 @@ public class OperateAttractions {
 						/*
 						 * 
 						 */
-						if(mytime>time*0.5&&mytime<time*1.2){
+						if(mytime>=7&&mytime<=9){
 							String route="";
 							String routeid="";
 							int zhishu=0;
@@ -161,57 +234,52 @@ public class OperateAttractions {
 							/*
 							 * 把这里的路线再做一个更加合理的规划
 							 */
-							//*********************************************
-							ForAttractions[] a=new ForAttractions[4];
-							a[0]=items.get(i);
-							a[1]=items.get(j);
-							a[2]=items.get(k);
-							a[3]=items.get(l);
-							double mindistance=10000;
-								for(int ii=0;ii<4;ii++){
-									for(int jj=0;jj<4;jj++){
-										if(ii==jj)
-											jj++;
-										if(jj==4)
-											break;
-										for(int kk=0;kk<4;kk++){
-											while(kk==ii||kk==jj){
-												kk++;
-											}
-											if(kk==4)
-												break;
-											for(int mm=0;mm<4;mm++){
-												while(mm==kk||mm==ii|mm==jj){
-													mm++;
-												}
-												if(mm==4)
-													break;
-												double result=selectDistance(a[ii],a[jj],a[kk],a[mm]);
-												System.out.println("result-4:"+result);
-												if(result<mindistance){
-													mindistance=result;
-													route=items.get(i).getName()+"-->"+items.get(j).getName()
-															+"-->"+items.get(k).getName()+"-->"+items.get(l).getName();
-													routeid=items.get(i).getId()+","+items.get(j).getId()
-															+","+items.get(k).getId()+","+items.get(l).getId();
-													zhishu=items.get(i).getForcrowds()+items.get(i).getForviewpreference()+
-															items.get(j).getForcrowds()+items.get(j).getForviewpreference()+
-															items.get(k).getForcrowds()+items.get(k).getForviewpreference()+
-															items.get(l).getForcrowds()+items.get(l).getForviewpreference();
-													time1=items.get(i).getTime()+items.get(j).getTime()+items.get(k).getTime()
-															+items.get(l).getTime();
-													price=items.get(i).getPrice()+items.get(j).getPrice()+
-															items.get(k).getPrice()+items.get(l).getPrice();
-													mypicture=items.get(i).getExterior();
-												}
-												System.out.println(ii+","+jj+","+kk+","+mm);
-											}
-										}
-									}
-							}
 							
+							//*********************************************
+//							ForAttractions[] a=new ForAttractions[4];
+//							a[0]=items.get(i);
+//							a[1]=items.get(j);
+//							a[2]=items.get(k);
+//							a[3]=items.get(l);
+							double mindistance=10000;
+							List<ForAttractions> lists=new ArrayList<>();
+							lists.add(items.get(i));
+							lists.add(items.get(j));
+							lists.add(items.get(k));
+							lists.add(items.get(l));
+							List<Integer> myidss=Tanxin.selectId(lists, 0);
+							//System.out.println(myidss);
+							List<Integer> myids=new ArrayList<>();
+							for(int p=0;p<items.size();p++){
+								for(Integer s:myidss){
+									if(items.get(p).getId()==s){
+										myids.add(p);
+									}
+								}
+							}
+							mindistance=0;
+							//mindistance=selectDistance(items.get(myids.get(0)),items.get(myids.get(1)),
+									//items.get(myids.get(2)),items.get(myids.get(3)));
+							mypicture=items.get(myids.get(0)).getExterior();
+							route=items.get(myids.get(0)).getName()+"-->"+items.get(myids.get(1)).getName()+"-->"
+									+items.get(myids.get(2)).getName()+"-->"+items.get(myids.get(3)).getName();
+							routeid=items.get(myids.get(0)).getId()+","+items.get(myids.get(1)).getId()+","+
+									items.get(myids.get(2)).getId()+","+items.get(myids.get(3)).getId();
+							zhishu=items.get(myids.get(0)).getForcrowds()+items.get(myids.get(0)).getForviewpreference()+
+									items.get(myids.get(1)).getForcrowds()+items.get(myids.get(1)).getForviewpreference()+
+									items.get(myids.get(2)).getForcrowds()+items.get(myids.get(2)).getForviewpreference()+
+									items.get(myids.get(3)).getForcrowds()+items.get(myids.get(3)).getForviewpreference();
+							time1=items.get(myids.get(0)).getTime()+
+									items.get(myids.get(1)).getTime()+
+									items.get(myids.get(2)).getTime()+
+									items.get(myids.get(3)).getTime();
+							price=items.get(myids.get(0)).getPrice()+
+									items.get(myids.get(1)).getPrice()+
+									items.get(myids.get(2)).getPrice()+
+									items.get(myids.get(3)).getPrice();
 							//****************************************************
-							if(mindistance<0.181||time>8){	
+							System.out.println(mindistance);
+							if(mindistance<0.181){	
 							RouteResult result=new RouteResult(mypicture,route, routeid, zhishu/8, time1,price);
 							mylist.add(result);
 							flag=0;

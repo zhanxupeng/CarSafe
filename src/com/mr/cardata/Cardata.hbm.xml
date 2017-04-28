@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-3-21 17:54:40 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.cardata.Cardata" table="CARDATA">
+    <class name="com.mr.cardata.Cardata" table="cardata">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
         <property name="route" type="java.lang.String">
-            <column name="ROUTE" />
+            <column name="route" />
         </property>
         <property name="speed" type="java.lang.String">
-            <column name="SPEED" />
+            <column name="speed" />
         </property>
     </class>
 </hibernate-mapping>

@@ -3,28 +3,28 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-3-6 15:30:27 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.examination.Examination" table="EXAMINATION">
+    <class name="com.mr.examination.Examination" table="examination">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="identity" />
         </id>
         <property name="question" type="java.lang.String">
-            <column name="QUESTION" />
+            <column name="question" />
         </property>
         <property name="answera" type="java.lang.String">
-            <column name="ANSWERA" />
+            <column name="answera" />
         </property>
         <property name="answerb" type="java.lang.String">
-            <column name="ANSWERB" />
+            <column name="answerb" />
         </property>
         <property name="answerc" type="java.lang.String">
-            <column name="ANSWERC" />
+            <column name="answerc" />
         </property>
         <property name="answerd" type="java.lang.String">
-            <column name="ANSWERD" />
+            <column name="answerd" />
         </property>
         <property name="answer" type="int">
-            <column name="ANSWER" />
+            <column name="answer" />
         </property>
     </class>
 </hibernate-mapping>

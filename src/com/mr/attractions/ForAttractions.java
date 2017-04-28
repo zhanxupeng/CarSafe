@@ -30,7 +30,10 @@ public class ForAttractions {
 		this.distance=distance;
 	}
 	public ForAttractions(){
-		
+		this.local="(1000,1000)";
+	}
+	public ForAttractions(String local){
+		this.local=local;
 	}
 	public int getId() {
 		return id;

@@ -3,31 +3,31 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.viewpreference.ViewPreference" table="VIEWPREFERENCE">
+    <class name="com.mr.viewpreference.ViewPreference" table="viewpreference">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
         <property name="enjoy" type="int">
-            <column name="ENJOY" />
+            <column name="enjoy" />
         </property>
         <property name="quiet" type="int">
-            <column name="QUIET" />
+            <column name="quiet" />
         </property>
         <property name="natural" type="int">
-            <column name="NATURAL" />
+            <column name="natural" />
         </property>
         <property name="history" type="int">
-            <column name="HISTORY" />
+            <column name="history" />
         </property>
         <property name="lively" type="int">
-            <column name="LIVELY" />
+            <column name="lively" />
         </property>
         <property name="stimulate" type="int">
-            <column name="STIMULATE" />
+            <column name="stimulate" />
         </property>
         <property name="hidden" type="int">
-            <column name="HIDDEN" />
+            <column name="hidden" />
         </property>
     </class>
 </hibernate-mapping>

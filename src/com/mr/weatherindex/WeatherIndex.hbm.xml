@@ -3,28 +3,28 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.weatherindex.WeatherIndex" table="WEATHERINDEX">
+    <class name="com.mr.weatherindex.WeatherIndex" table="weatherindex">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
         <property name="sunny" type="int">
-            <column name="SUNNY" />
+            <column name="sunny" />
         </property>
         <property name="cloudy" type="int">
-            <column name="CLOUDY" />
+            <column name="cloudy" />
         </property>
         <property name="yinday" type="int">
-            <column name="YINDAY" />
+            <column name="yinday" />
         </property>
         <property name="smallrain" type="int">
-            <column name="SMALLRAIN" />
+            <column name="smallrain" />
         </property>
         <property name="rainy" type="int">
-            <column name="RAINY" />
+            <column name="rainy" />
         </property>
         <property name="bigrain" type="int">
-            <column name="BIGRAIN" />
+            <column name="bigrain" />
         </property>
     </class>
 </hibernate-mapping>

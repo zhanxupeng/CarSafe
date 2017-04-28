@@ -3,19 +3,19 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-3-6 22:06:07 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.integration.Integration" table="INTEGRATION">
+    <class name="com.mr.integration.Integration" table="integration">
         <id name="car_id" type="int">
-            <column name="CAR_ID" />
+            <column name="car_id" />
             <generator class="assigned" />
         </id>
         <property name="coin" type="int">
-            <column name="COIN" />
+            <column name="coin" />
         </property>
         <property name="member" type="int">
-            <column name="MEMBER" />
+            <column name="member" />
         </property>
         <property name="mydate" type="int">
-            <column name="MYDATE" />
+            <column name="mydate" />
         </property>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 19:50:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.mr.featuresfood.Featuresfood" table="featuresfood">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="rank" type="int">
+            <column name="rank" />
+        </property>
+        <property name="price" type="int">
+            <column name="price" />
+        </property>
+        <property name="category" type="java.lang.String">
+            <column name="category" />
+        </property>
+        <property name="longitude" type="double">
+            <column name="longitude" />
+        </property>
+        <property name="latitude" type="double">
+            <column name="latitude" />
+        </property>
+        <property name="dishes" type="java.lang.String">
+            <column name="dishes" />
+        </property>
+        <property name="exterior" type="java.lang.String">
+            <column name="exterior" />
+        </property>
+        <property name="detailpicture" type="java.lang.String">
+            <column name="detailpicture" />
+        </property>
+    </class>
+</hibernate-mapping>

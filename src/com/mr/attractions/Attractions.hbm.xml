@@ -3,31 +3,31 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.attractions.Attractions" table="ATTRACTIONS">
+    <class name="com.mr.attractions.Attractions" table="attractions">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
         <property name="name" type="java.lang.String">
-            <column name="NAME" />
+            <column name="name" />
         </property>
         <property name="detail" type="java.lang.String">
-            <column name="DETAIL" />
+            <column name="detail" />
         </property>
         <property name="local" type="java.lang.String">
-            <column name="LOCAL" />
+            <column name="local" />
         </property>
         <property name="exterior" type="java.lang.String">
-            <column name="EXTERIOR" />
+            <column name="exterior" />
         </property>
         <property name="routepicture" type="java.lang.String">
-            <column name="ROUTEPICTURE" />
+            <column name="routepicture" />
         </property>
         <property name="time" type="double">
-            <column name="TIME" />
+            <column name="time" />
         </property>
         <property name="price" type="double">
-            <column name="PRICE" />
+            <column name="price" />
         </property>
         <many-to-one name="crowds" class="com.mr.crowds.Crowds" fetch="join">
             <column name="crowdsid" />

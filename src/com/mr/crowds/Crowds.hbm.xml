@@ -3,34 +3,34 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-4-12 7:53:33 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.crowds.Crowds" table="CROWDS">
+    <class name="com.mr.crowds.Crowds" table="crowds">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="assigned" />
         </id>
         <property name="teens" type="int">
-            <column name="TEENS" />
+            <column name="teens" />
         </property>
         <property name="student" type="int">
-            <column name="STUDENT" />
+            <column name="student" />
         </property>
         <property name="white" type="int">
-            <column name="WHITE" />
+            <column name="white" />
         </property>
         <property name="blue" type="int">
-            <column name="BLUE" />
+            <column name="blue" />
         </property>
         <property name="familys" type="int">
-            <column name="FAMILYS" />
+            <column name="familys" />
         </property>
         <property name="oldman" type="int">
-            <column name="OLDMAN" />
+            <column name="oldman" />
         </property>
         <property name="friend" type="int">
-            <column name="FRIEND" />
+            <column name="friend" />
         </property>
         <property name="couple" type="int">
-            <column name="COUPLE" />
+            <column name="couple" />
         </property>
     </class>
 </hibernate-mapping>

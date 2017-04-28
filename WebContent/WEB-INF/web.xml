@@ -199,4 +199,34 @@
     <servlet-name>SingleRouteServlet</servlet-name>
     <url-pattern>/SingleRouteServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RouteDetailServlet</display-name>
+    <servlet-name>RouteDetailServlet</servlet-name>
+    <servlet-class>com.mr.servlet.RouteDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RouteDetailServlet</servlet-name>
+    <url-pattern>/RouteDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FoodServlet</display-name>
+    <servlet-name>FoodServlet</servlet-name>
+    <servlet-class>com.mr.servlet.FoodServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FoodServlet</servlet-name>
+    <url-pattern>/FoodServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HotelServlet</display-name>
+    <servlet-name>HotelServlet</servlet-name>
+    <servlet-class>com.mr.servlet.HotelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HotelServlet</servlet-name>
+    <url-pattern>/HotelServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

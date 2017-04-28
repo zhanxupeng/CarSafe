@@ -3,19 +3,19 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-3-8 22:19:39 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.mr.blog.Blog" table="BLOG">
+    <class name="com.mr.blog.Blog" table="blog">
         <id name="id" type="int">
-            <column name="ID" />
+            <column name="id" />
             <generator class="identity" />
         </id>
         <property name="car_id" type="int">
-            <column name="CAR_ID" />
+            <column name="car_id" />
         </property>
         <property name="username" type="java.lang.String">
-            <column name="USERNAME" />
+            <column name="username" />
         </property>
         <property name="mysign" type="java.lang.String">
-            <column name="MYSIGN" />
+            <column name="mysign" />
         </property>
     </class>
 </hibernate-mapping>
